@@ -1,6 +1,7 @@
 package com.jackosky.arrays_strings;
 
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,4 +29,17 @@ public class Question1_1 {
     }
     return true;
   }
+
+  public boolean isUniqueInOrder(String input) {
+    char[] chars = input.toCharArray();
+    Arrays.sort(chars);
+    for (int i = 0; i < chars.length; i++) {
+      char character = input.charAt(i);
+      if (Arrays.binarySearch(chars, i + 1, chars.length, character) >= 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
 }

@@ -30,4 +30,16 @@ class Question1_1Test {
     assertThat(new Question1_1().isUniqueInPlace("abcdabcd")).isFalse();
   }
 
+  @Test
+  void test_unique_order() {
+    assertThat(new Question1_1().isUniqueInOrder("abc")).isTrue();
+    assertThat(new Question1_1().isUniqueInOrder("a")).isTrue();
+    assertThat(new Question1_1().isUniqueInOrder("basd1")).isFalse();
+    assertThat(new Question1_1().isUniqueInOrder("aa")).isFalse();
+    assertThat(new Question1_1().isUniqueInOrder("abb")).isFalse();
+    assertThat(new Question1_1().isUniqueInOrder("abcda")).isFalse();
+    assertThat(new Question1_1().isUniqueInOrder("abacd")).isFalse();
+    assertThat(new Question1_1().isUniqueInOrder("abcdabcd")).isFalse();
+  }
+
 }
